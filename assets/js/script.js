@@ -94,6 +94,29 @@ document.addEventListener('DOMContentLoaded', function () {
             document.documentElement.classList.remove('menu-open');
         }, 200); // Remove the outlined effect after 1 second (1000 milliseconds)
     });
+
+
+
+document.querySelectorAll('.menu__link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var targetSelector = this.getAttribute('data-target');
+            var block = document.querySelector(targetSelector);
+            if (block) {
+                block.classList.add('block-outlined');
+                block.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(function() {
+                    block.classList.remove('block-outlined');
+                    document.documentElement.classList.remove('menu-open');
+                }, 100); // Remove the outlined effect after 100 milliseconds
+            }
+        });
+    });
+
+
+
+
+
+
     document.getElementById('cinemas__read-more1').addEventListener('click', function() {
         var block = document.querySelector('.block__projects1');
         block.classList.add('block-outlined');
@@ -103,7 +126,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Закрываем меню после прокрутки
             document.documentElement.classList.remove('menu-open');
         }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });document.getElementById('cinemas__read-more2').addEventListener('click', function() {
+    });
+    document.getElementById('cinemas__read-more2').addEventListener('click', function() {
         var block = document.querySelector('.block__projects2');
         block.classList.add('block-outlined');
         block.scrollIntoView({ behavior: 'smooth' });
@@ -112,7 +136,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Закрываем меню после прокрутки
             document.documentElement.classList.remove('menu-open');
         }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });document.getElementById('cinemas__read-more3').addEventListener('click', function() {
+    });
+    document.getElementById('cinemas__read-more3').addEventListener('click', function() {
         var block = document.querySelector('.block__projects3');
         block.classList.add('block-outlined');
         block.scrollIntoView({ behavior: 'smooth' });
