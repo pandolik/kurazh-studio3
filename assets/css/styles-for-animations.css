@@ -204,10 +204,14 @@ button.animate-in-header::before {
     transform: translate(0, -66.666%);
   }
 }
+
+
 /*BUTTON MORE in PROJECTS*/
 button#button-our-projects-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative; 
-  left: 50%; 
   transform: translateX(-50%); 
   padding: 10px 20px;  
   border: none;
