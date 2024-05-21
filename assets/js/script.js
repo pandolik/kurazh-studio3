@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Нахождения блока по ID и переместить пользователя к нему туда
+// HEADER
     // header__quantity
     document.getElementById('cart-header__quantity').addEventListener('click', function() {
         var block = document.querySelector('.section-wrapper__projects');
@@ -96,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-
+// HEADER, FOOTER LINKS
 document.querySelectorAll('.menu__link').forEach(function(link) {
         link.addEventListener('click', function() {
             var targetSelector = this.getAttribute('data-target');
@@ -112,11 +113,7 @@ document.querySelectorAll('.menu__link').forEach(function(link) {
         });
     });
 
-
-
-
-
-
+// CINEMA
     document.getElementById('cinemas__read-more1').addEventListener('click', function() {
         var block = document.querySelector('.block__projects1');
         block.classList.add('block-outlined');
@@ -237,7 +234,7 @@ document.querySelectorAll('.menu__link').forEach(function(link) {
     window.onload = function() {
         fadeInOnScroll('default-container__p', 100); // Для элемента с id 'default-container__p'
         fadeInOnScroll('default-container__text', 300); // Для элемента с id 'default-container__text'
-        fadeInOnScroll('classes', 100); // Для элемента с id 'classes'
+        fadeInOnScroll('classes', 250); // Для элемента с id 'classes'
         fadeInOnScroll('default-container__button', 100); // Для элемента с id 'default-container__button'
     };
 
