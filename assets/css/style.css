@@ -175,6 +175,9 @@ section {
 .menu__link {
     font-size: 25px;
 }
+.menu__list {
+    white-space: nowrap;
+}
 /*.cart-header__text {
     font-size: 25px;
 }*/
@@ -185,6 +188,11 @@ section {
 .header__logo img {
         width: 100px;
 }
+}
+@media (max-width: 1100px) {
+    .desktop__menu .menu__item:first-child {
+        display: none;
+    }
 }
 @media (max-width: 991.98px) {
     .button {
@@ -197,9 +205,9 @@ section {
     .header__container {
         min-height: 90px;
     }
-    .menu__list li:last-child {
+    /*.menu__list li:last-child {
         display: none;
-    }
+    }*/
 }   
 @media (max-width: 767.98px) {
     .mobile__menu .menu__item {
@@ -1817,7 +1825,7 @@ p#default-container__p {
 }
 @media(max-width: 869px){
 .div-wrapper__projects {
-    margin: 10px 0% 10px 0%;
+    margin: 10px 0%;
 }
 button#button-for-the-section-our-films {
     margin: 0;
@@ -2138,6 +2146,70 @@ h1 {font-size: 34px;}
   height: 40px;
 }}
 
+/*-----------------QUESTION WRAPPER----------------*/
+.question__wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f2f5;
+    color: #000;
+    font-family: Arial, sans-serif;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+.question__wrapper h2 {font-size: clamp(25px, 5vw, 52px); font-weight: 600; text-align: left;}
+.question__block {padding: 40px;}
+.question__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+/*            margin-top: 20px;*/
+    margin: 40px;
+}
+.question {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.question__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+}
+.question__button h2 {
+    margin: 0;
+    font-size: clamp(18px, 5vw, 25px);
+    flex-grow: 1;
+}
+.question__button svg {
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+.more-questions {
+    margin-top: 20px;
+}
+.more-questions button {
+    background-color: #64c07d;
+    color: white;
+    padding: 16px 45px;
+    border-radius: 15px;
+    font-size: clamp(18px, 5vw, 22px);
+    cursor: pointer;
+    display: flex;
+    justify-content: left;
+    transition: .4s;
+}
+.more-questions button:hover {
+    background-color: #45a57c;
+}
 
   /*FOOTER*/
 .footer-main {
