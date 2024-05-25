@@ -238,4 +238,32 @@ document.querySelectorAll('.menu__link').forEach(function(link) {
         fadeInOnScroll('default-container__button', 100); // Для элемента с id 'default-container__button'
     };
 
+// OPEN ANSVER in QUESTION
+    const buttons = document.querySelectorAll('.question__button');
+    let activeContent = null;
+    let activeButton = null;
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+
+            if (activeContent && activeContent !== content) {
+                activeContent.classList.remove('active');
+                activeButton.querySelector('svg').classList.remove('rotate');
+            }
+
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                button.querySelector('svg').classList.remove('rotate');
+                activeContent = null;
+                activeButton = null;
+            } else {
+                content.classList.add('active');
+                button.querySelector('svg').classList.add('rotate');
+                activeContent = content;
+                activeButton = button;
+            }
+        });
+    });
+
 });
