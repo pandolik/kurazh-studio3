@@ -229,8 +229,7 @@ button#button-our-projects-more {
   overflow: hidden;   
   width: 200px;
   height: auto;
-  margin: 30px auto; 
-  
+  margin: 30px 50%; 
 }
 button>span {
   color: lightgoldenrodyellow;
@@ -244,13 +243,13 @@ button>span {
   position: absolute;
   width: 50%;
   height: 100%;
-/*  top: 0;*/
+  top: 0;
 }
 .left {
-  left: 0;
+  left: 66%;
 }
 .right {
-  right: 0;
+  right: 66%;
 }
 
 .right::after {
