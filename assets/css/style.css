@@ -831,7 +831,7 @@ section {
 }
 /*-----------------Як проходять наші заняття------*/
 /*-----------------CLASSES------------------------*/
-
+.section__classes {box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);}
 .classes {
     font-size: clamp(28px, 8vw, 72px);
     padding: 20px 0 0 0;
@@ -844,8 +844,8 @@ section {
 }
 .player {
     width: 85%;
-    margin: 0 auto;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
+    margin: 0 auto 30px auto;
+    box-shadow: 20px 20px 30px rgba(255, 255, 255, 0.3);
 }
 @media (max-width: 1200.98px) {
 .player {
@@ -900,7 +900,7 @@ section {
 
 .about-us__section h2 {
     margin-bottom: 40px;
-    font-size: clamp(32px, 5vw, 56px);
+    font-size: clamp(22px, 5vw, 56px);
     padding: 20px;
 }
 
@@ -913,7 +913,7 @@ section {
 .about-us__body .about-us__text {
     flex: 1;
     padding: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .about-us__body .about-us__image {
@@ -956,6 +956,7 @@ section {
 }
 
 @media (max-width: 991.98px) {
+    .about-us__section h2 {padding: 0}
     .about-us__body {
         flex-direction: column;
     }
@@ -964,7 +965,13 @@ section {
     .about-us__body .about-us__text {
         padding: 10px;
     }
+    
+    .about-us__body--reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
+
 /*-------------------- CURATORS SECTION ----------------------*/
 .curators__wrapper{
     width: 100%;
