@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+
 *,
 *::before,
 *::after {
@@ -44,7 +46,8 @@ body {
     background-color: #373737;
     font-weight: 400;
     color: #fff;
-    font-family: "Fira Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
+
 }
 button,
 input {
