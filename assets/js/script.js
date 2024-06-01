@@ -12,11 +12,11 @@ window.addEventListener('scroll', () => {
 arrowTop.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth' // Плавная прокрутка к верху страницы
+        behavior: 'smooth'
     });
 });
 
-    // Open menu
+// Open menu
     document.addEventListener('click', documentClick);
     function documentClick(e) {
         const targetItem = e.target;
@@ -25,7 +25,7 @@ arrowTop.addEventListener('click', () => {
         }
     }
 
-    // Click on the button, opening a hidden block.
+// Click on the button, opening a hidden block.
     const button = document.getElementById("button-our-projects-more");
     const blocks = document.querySelectorAll(".block-container");
     button.addEventListener("click", function () {
@@ -39,7 +39,7 @@ arrowTop.addEventListener('click', () => {
         });
     });
 
-    // HEADER, FOOTER LINKS
+// HEADER, FOOTER LINKS
     document.querySelectorAll('.link__menu').forEach(function (link) {
         link.addEventListener('click', function (event) {
             // Find the element with the data-target attribute
@@ -54,12 +54,12 @@ arrowTop.addEventListener('click', () => {
                 setTimeout(function () {
                     block.classList.remove('block-outlined');
                     document.documentElement.classList.remove('menu-open');
-                }, 1000);
+                }, 100);
             }
         });
     });
 
-    // DOWNLOAD IMAGE
+// DOWNLOAD IMAGE
     const downloadButton = document.querySelector('.slider__circle span');
     const image = document.getElementById('enlarged-image');
 
@@ -72,7 +72,7 @@ arrowTop.addEventListener('click', () => {
         document.body.removeChild(link);
     });
 
-    // Button Default Container
+// Button Default Container
     document.getElementById('default-container__button').addEventListener('click', function () {
         var block = document.querySelector('.section-wrapper__projects');
         block.classList.add('block-outlined');
@@ -82,7 +82,7 @@ arrowTop.addEventListener('click', () => {
         }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
     });
 
-    // Animation in Main section
+// Animation in Main section
     function fadeInOnScroll(elementId, duration) {
         var distance = window.innerWidth; // Начальное расстояние для анимации справа налево
         var op = 0; // Счетчик для каждой анимации
@@ -119,14 +119,14 @@ arrowTop.addEventListener('click', () => {
         window.addEventListener('scroll', fadeIn);
     }
 
-    // Animation in Default-container section
+// Animation in Default-container section
     const fadeInElements = ['default-container__p', 'default-container__text', 'classes', 'default-container__button'];
 
     fadeInElements.forEach(elementId => {
         fadeInOnScroll(elementId, 100);
     });
 
-    // OPEN ANSVER in QUESTION
+// OPEN ANSVER in QUESTION
     const buttons = document.querySelectorAll('.question__button');
     let activeContent = null;
     let activeButton = null;
@@ -154,7 +154,7 @@ arrowTop.addEventListener('click', () => {
         });
     });
 
-    // CINEMAS ANIMATION - BLOCK APPEAREANS
+// CINEMAS ANIMATION - BLOCK APPEAREANS
     const cinemaSection = document.querySelector('.cinema');
     const cinemaCards = document.querySelectorAll('.cinemas__card');
 
@@ -179,7 +179,7 @@ arrowTop.addEventListener('click', () => {
         console.error('Cinema section or cards not found');
     }
 
-    // PLAYER ANIMATION - BLOCK APPEAREANS
+// PLAYER ANIMATION - BLOCK APPEAREANS
     const playerWrapper = document.querySelector('.player__wrapp');
 
     if (playerWrapper) {
@@ -198,33 +198,36 @@ arrowTop.addEventListener('click', () => {
         console.error('Player wrapper not found');
     }
 
-    // ABOUT US ANIMATION - BLOCK APPEAREANS
-    const usBodySections = document.querySelectorAll('.us__body');
-    usBodySections.forEach(usBodySection => {
-        const usBodyObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    usBodyObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        usBodyObserver.observe(usBodySection);
-    });
-
-    const aboutUsSectionReverse = document.querySelector('.about-us__body.about-us__body--reverse');
-    const aboutUsObserverReverse = new IntersectionObserver(entries => {
+// ABOUT US ANIMATION - BLOCK APPEAREANS
+const usBodySections = document.querySelectorAll('.us__body');
+usBodySections.forEach(usBodySection => {
+    const usBodyObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                aboutUsObserverReverse.unobserve(entry.target);
+                usBodyObserver.unobserve(entry.target);
             }
         });
     }, {
         threshold: 0.1
     });
-    aboutUsObserverReverse.observe(aboutUsSectionReverse);
+    usBodyObserver.observe(usBodySection);
+});
+
+const aboutUsSectionReverse = document.querySelector('.about-us__body.about-us__body--reverse');
+const aboutUsObserverReverse = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            aboutUsObserverReverse.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1
+});
+aboutUsObserverReverse.observe(aboutUsSectionReverse);
+
+
+
 
 });
