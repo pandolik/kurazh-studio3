@@ -31,7 +31,7 @@ button#button-for-the-section-our-films {
   border-radius: 4px; 
   z-index: 0;  
   overflow: hidden;   
-  width: 400px;
+  width: 500px;
   height: auto;
 }
 
@@ -239,20 +239,20 @@ button>span {
             -1px 1px 0 #000,
             1px 1px 0 #000;
 }
-.left, .right {
+#button-our-projects-more .left, #button-our-projects-more .right {
   position: absolute;
   width: 50%;
   height: 100%;
   top: 0;
 }
-.left {
+#button-our-projects-more .left {
   left: 66%;
 }
-.right {
+#button-our-projects-more .right {
   right: 66%;
 }
 
-.right::after {
+#button-our-projects-more .right::after {
   top: -30px;
   left: calc(-66% - 20px);
   
@@ -261,20 +261,20 @@ button>span {
   transition: transform .4s ease-out;
   transform: translate(0, -90%) rotate(0deg)
 }
-button>span:hover {
+#button-our-projects-more button>span:hover {
   color: yellow;
 
 
 }
-button:hover .right::after {
+#button-our-projects-more button:hover .right::after {
   transform: translate(0, -47%) rotate(0deg)
 }
 
-button .right:hover::after {
+#button-our-projects-more button .right:hover::after {
   transform: translate(0, -50%) rotate(-7deg)
 }
 
-button .left:hover ~ .right::after {
+#button-our-projects-more button .left:hover ~ .right::after {
   transform: translate(0, -50%) rotate(7deg)
 }
 

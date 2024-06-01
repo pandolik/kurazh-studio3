@@ -1,78 +1,88 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-// Open menu
+// ICON ARROW
+const arrowTop = document.getElementById('arrowTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        arrowTop.style.display = 'flex';
+    } else {
+        arrowTop.style.display = 'none';
+    }
+});
+arrowTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Плавная прокрутка к верху страницы
+    });
+});
+
+    // Open menu
     document.addEventListener('click', documentClick);
     function documentClick(e) {
         const targetItem = e.target;
-        if(targetItem.closest('.icon-menu')){
+        if (targetItem.closest('.icon-menu')) {
             document.documentElement.classList.toggle('menu-open');
         }
     }
 
-// Click on the button, opening a hidden block.
+    // Click on the button, opening a hidden block.
     const button = document.getElementById("button-our-projects-more");
     const blocks = document.querySelectorAll(".block-container");
     button.addEventListener("click", function () {
-      blocks.forEach((block) => {
-        // Проверяем текущее состояние блока
-        if (block.style.display === "none" || block.style.display === "") {
-          block.style.display = "flex"; // Если скрыт или не определен, показываем блок
-        } else {
-          block.style.display = "none"; // Если отображается, скрываем блок
-        }
-      });
-    });
-
-
-// HEADER, FOOTER LINKS
-document.querySelectorAll('.link__menu').forEach(function(link) {
-    link.addEventListener('click', function(event) {
-        // Find the element with the data-target attribute
-        var targetElement = event.target.closest('[data-target]');
-        if (!targetElement) return; // Exit if no such element
-
-        var targetSelector = targetElement.getAttribute('data-target');
-        var block = document.querySelector(targetSelector);
-        if (block) {
-            block.classList.add('block-outlined');
-            block.scrollIntoView({ behavior: 'smooth' });
-            setTimeout(function() {
-                block.classList.remove('block-outlined');
-                document.documentElement.classList.remove('menu-open');
-            }, 1000); 
-        }
-    });
-});
-
-
-
-
-// DOWNLOAD IMAGE
-const downloadButton = document.querySelector('.slider__circle span');
-        const image = document.getElementById('enlarged-image');
-
-        downloadButton.addEventListener('click', function() {
-            const link = document.createElement('a');
-            link.href = image.src;
-            link.download = 'image.jpg';  // Имя файла при скачивании
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        blocks.forEach((block) => {
+            // Проверяем текущее состояние блока
+            if (block.style.display === "none" || block.style.display === "") {
+                block.style.display = "flex"; // Если скрыт или не определен, показываем блок
+            } else {
+                block.style.display = "none"; // Если отображается, скрываем блок
+            }
         });
+    });
+
+    // HEADER, FOOTER LINKS
+    document.querySelectorAll('.link__menu').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            // Find the element with the data-target attribute
+            var targetElement = event.target.closest('[data-target]');
+            if (!targetElement) return; // Exit if no such element
+
+            var targetSelector = targetElement.getAttribute('data-target');
+            var block = document.querySelector(targetSelector);
+            if (block) {
+                block.classList.add('block-outlined');
+                block.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(function () {
+                    block.classList.remove('block-outlined');
+                    document.documentElement.classList.remove('menu-open');
+                }, 1000);
+            }
+        });
+    });
+
+    // DOWNLOAD IMAGE
+    const downloadButton = document.querySelector('.slider__circle span');
+    const image = document.getElementById('enlarged-image');
+
+    downloadButton.addEventListener('click', function () {
+        const link = document.createElement('a');
+        link.href = image.src;
+        link.download = 'image.jpg';  // Имя файла при скачивании
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
 
     // Button Default Container
-    document.getElementById('default-container__button').addEventListener('click', function() {
+    document.getElementById('default-container__button').addEventListener('click', function () {
         var block = document.querySelector('.section-wrapper__projects');
         block.classList.add('block-outlined');
         block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
+        setTimeout(function () {
             block.classList.remove('block-outlined');
         }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
     });
 
-
-
-// Animation in Main section
+    // Animation in Main section
     function fadeInOnScroll(elementId, duration) {
         var distance = window.innerWidth; // Начальное расстояние для анимации справа налево
         var op = 0; // Счетчик для каждой анимации
@@ -84,7 +94,7 @@ const downloadButton = document.querySelector('.slider__circle span');
         function fadeIn() {
             if (!isVisible && isElementInViewport(element)) {
                 isVisible = true;
-                var timer = setInterval(function() {
+                var timer = setInterval(function () {
                     op += increment;
                     if (op >= 1) {
                         clearInterval(timer);
@@ -109,16 +119,14 @@ const downloadButton = document.querySelector('.slider__circle span');
         window.addEventListener('scroll', fadeIn);
     }
 
+    // Animation in Default-container section
+    const fadeInElements = ['default-container__p', 'default-container__text', 'classes', 'default-container__button'];
 
-// Animation in Default-container section
-    window.onload = function() {
-        fadeInOnScroll('default-container__p', 100); // Для элемента с id 'default-container__p'
-        fadeInOnScroll('default-container__text', 300); // Для элемента с id 'default-container__text'
-        fadeInOnScroll('classes', 250); // Для элемента с id 'classes'
-        fadeInOnScroll('default-container__button', 100); // Для элемента с id 'default-container__button'
-    };
+    fadeInElements.forEach(elementId => {
+        fadeInOnScroll(elementId, 100);
+    });
 
-// OPEN ANSVER in QUESTION
+    // OPEN ANSVER in QUESTION
     const buttons = document.querySelectorAll('.question__button');
     let activeContent = null;
     let activeButton = null;
@@ -145,7 +153,8 @@ const downloadButton = document.querySelector('.slider__circle span');
             }
         });
     });
-// CINEMAS ANIMATION - BLOCK APPEAREANS
+
+    // CINEMAS ANIMATION - BLOCK APPEAREANS
     const cinemaSection = document.querySelector('.cinema');
     const cinemaCards = document.querySelectorAll('.cinemas__card');
 
@@ -182,7 +191,7 @@ const downloadButton = document.querySelector('.slider__circle span');
                 }
             });
         }, {
-            threshold: 0.4
+            threshold: 0.2
         });
         playerObserver.observe(playerWrapper);
     } else {
@@ -190,40 +199,32 @@ const downloadButton = document.querySelector('.slider__circle span');
     }
 
     // ABOUT US ANIMATION - BLOCK APPEAREANS
-// ABOUT US ANIMATION - BLOCK APPEAREANS
-const usBodySections = document.querySelectorAll('.us__body');
-usBodySections.forEach(usBodySection => {
-    const usBodyObserver = new IntersectionObserver(entries => {
+    const usBodySections = document.querySelectorAll('.us__body');
+    usBodySections.forEach(usBodySection => {
+        const usBodyObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    usBodyObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        usBodyObserver.observe(usBodySection);
+    });
+
+    const aboutUsSectionReverse = document.querySelector('.about-us__body.about-us__body--reverse');
+    const aboutUsObserverReverse = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                usBodyObserver.unobserve(entry.target);
+                aboutUsObserverReverse.unobserve(entry.target);
             }
         });
     }, {
         threshold: 0.1
     });
-    
-    usBodyObserver.observe(usBodySection);
-});
-
-
-const aboutUsSectionReverse = document.querySelector('.about-us__body.about-us__body--reverse');
-const aboutUsObserverReverse = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            aboutUsObserverReverse.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.1
-});
-aboutUsObserverReverse.observe(aboutUsSectionReverse);
-
-
-
-
+    aboutUsObserverReverse.observe(aboutUsSectionReverse);
 
 });
-

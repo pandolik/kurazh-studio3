@@ -21,6 +21,24 @@ section {
     color: lightslategray;
     text-decoration: none;
 }
+.arrow__top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: none; 
+    cursor: pointer; 
+    z-index: 4;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow__top i {
+    font-size: 40px;
+}
 /*HEADER*/
 .button {
     display: inline-block;
@@ -866,7 +884,7 @@ section {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform: translate(-400px, -400px);
+    transform: translate(-100px, -100px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 .player {
