@@ -604,6 +604,31 @@ section {
         background-position: 200% 0;
     }
 }
+/*-------------------CINEMAS BLOCKS---------------------*/
+/*---------------------ANIMATIONS---------------------*/
+.cinemas__card {
+    opacity: 0;
+    transform: translateY(-300px);
+    transition: opacity 0.5s ease-out, transform 0.9s ease-out;
+}
+
+.cinemas__card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cinemas__card:nth-child(1) {
+    transition-delay: 0.4s;
+}
+
+.cinemas__card:nth-child(2) {
+    transition-delay: 0.6s;
+}
+
+.cinemas__card:nth-child(3) {
+    transition-delay: 0.8s;
+}
+/*main styles*/
 .cinema{
     display: flex;
     justify-content: center;
@@ -728,7 +753,6 @@ section {
     .cinemas {
         gap: 50px 15px 100px 15px;
         padding: 80px 20px 0;
-
     }
 }
 @media(max-width: 1400px) {
@@ -841,12 +865,20 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transform: translate(-400px, -400px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 .player {
     width: 85%;
     margin: 0 auto 30px auto;
     box-shadow: 20px 20px 30px rgba(255, 255, 255, 0.3);
 }
+.player__wrapp.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
 @media (max-width: 1200.98px) {
 .player {
     width: 90%;
@@ -877,7 +909,6 @@ section {
         font-size: 30px;
 }
 .player__video {
-
     height: 60vh !important;
 }
 
@@ -891,6 +922,7 @@ section {
     height: 40vh !important;
 }
 }
+/*-----------------------------ABOUT US SECTION-----------------------------*/
 .about-us__wrapper {
     width: 100%;
     max-width: 1140px;
@@ -914,6 +946,9 @@ section {
     flex: 1;
     padding: 20px;
     letter-spacing: 1.33px;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transform: translateX(300px);
 }
 
 .about-us__body .about-us__image {
@@ -926,8 +961,17 @@ section {
     width: 445px;
     height: auto;
     border-radius: 40px;
+    max-width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transform: translateX(-300px);
 }
-
+.about-us__body.visible .about-us__image img,
+.about-us__body.visible .about-us__text {
+    opacity: 1;
+    transform: translateX(0);
+}
 .about-us__text h2 {
     margin-bottom: 20px;
     font-size: 32px;
@@ -1551,7 +1595,8 @@ section {
     }
 /*----------------------------TEAM----------------------------*/
 .team__body {
-    display: flex; 
+    display: flex;
+    padding: 20px;
 }
 .left__block,
 .right__block {
@@ -1566,12 +1611,8 @@ section {
     display: flow-root;
     position: relative;
 }
-.team__body {
-    padding: 20px;
-}
 .left__block {
     width: 40%;
-    float: left;
     position: relative;
 }
 .team__title {
@@ -1610,7 +1651,6 @@ section {
 }
 .right__block {
     width: 60%;
-    float: right;
 }
 .team-right__image-and-text {
     margin: 0 0 0 30px;
@@ -1621,56 +1661,53 @@ section {
     border-radius: 8%;
 }
 @media(max-width: 1300px){
-    .left__block {
+    .left__block, .right__block {
         width: 100%;
     }
     .right__block {
         margin-top: 5%;
-        width: 100%;
     }
-    .team-right__image-and-text{margin:0;}
+    .team-right__image-and-text {
+        margin: 0;
+    }
 }
 @media(max-width: 1200px){
-.team__body {
+    .team__body {
         flex-direction: column; 
-}
-.left__block,
-.right__block {
-    flex: 1;
-    max-width: 100%; 
-}
-.team-right__image-and-text {
-    padding: 0 0 0 0px;
-}
+    }
+    .team-right__image-and-text {
+        padding: 0 0 0 0px;
+    }
 }
 @media(max-width: 720px){
-.team__title {
-    font-size: 60px;
-}
-.team__text {
-    font-size: 30px;
-}
-.right__block {
+    .team__title {
+        font-size: 3rem; /* 60px */
+    }
+    .team__text {
+        font-size: 1.5rem; /* 30px */
+    }
+    .right__block {
         margin-top: 10%;
     }
 }
 @media(max-width: 560px){
-.team__text {
-    font-size: 25px;
-}
-.team__button {
-    margin: 0 0px;
-}
-.right__block {
+    .team__text {
+        font-size: 1.25rem; /* 25px */
+    }
+    .team__button {
+        margin: 0 0px;
+    }
+    .right__block {
         margin-top: 15%;
     }
 }
 @media(max-width: 375px){
-.team__text {
-    font-size: 20px;
+    .team__text {
+        font-size: 1rem; /* 20px */
+    }
 }
-}
-/* Section our-projects */
+
+/* ------------------------------SECTION OUR PROJECTS------------------------------ */
 .block__projects {
     border-radius: 30px;
     background-color: grey;
@@ -1824,7 +1861,7 @@ button#button-for-the-section-our-films {
 }
 }
 .contact__wrapper {
-  font-family: "Gerhaus", sans-serif; /* Если шрифт не загрузится, будет использоваться альтернативный шрифт */
+  font-family: "Gerhaus", sans-serif;
   width: 100%;
   height: 725px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

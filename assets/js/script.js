@@ -9,18 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Scroll
-    window.onscroll = function() {
-      var el = document.getElementsByTagName('header')[0];
-      var className = 'small';
-      if (el.classList) {
-        if (window.scrollY > 10)
-          el.classList.add(className);
-        else
-          el.classList.remove(className);
-      }
-    };
-
 // Click on the button, opening a hidden block.
     const button = document.getElementById("button-our-projects-more");
     const blocks = document.querySelectorAll(".block-container");
@@ -36,150 +24,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-// Нахождения блока по ID и переместить пользователя к нему туда
-// HEADER
-    // header__quantity
-    document.getElementById('cart-header__quantity').addEventListener('click', function() {
-        var block = document.querySelector('.section-wrapper__projects');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-            // Закрываем меню после прокрутки
-            document.documentElement.classList.remove('menu-open');
-        }, 100); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-
-    // Проекты
-    document.getElementById('cart-header__text').addEventListener('click', function() {
-        var block = document.querySelector('.section-wrapper__projects');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-            // Закрываем меню после прокрутки
-            document.documentElement.classList.remove('menu-open');
-        }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-    // Button in header
-    document.getElementById('header__button').addEventListener('click', function() {
-        var block = document.querySelector('.contact__wrapper');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-            // Закрываем меню после прокрутки
-            document.documentElement.classList.remove('menu-open');
-        }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-
-    // Контакти Header
-    document.getElementById('menu__contact').addEventListener('click', function() {
-        var block = document.querySelector('.contact__wrapper');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-            // Закрываем меню после прокрутки
-            document.documentElement.classList.remove('menu-open');
-        }, 100); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-    // Процес занять
-    document.getElementById('menu__process').addEventListener('click', function() {
-        var block = document.querySelector('.section__classes');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-            // Закрываем меню после прокрутки
-            document.documentElement.classList.remove('menu-open');
-        }, 200); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-
-
 // HEADER, FOOTER LINKS
-document.querySelectorAll('.menu__link').forEach(function(link) {
-        link.addEventListener('click', function() {
-            var targetSelector = this.getAttribute('data-target');
-            var block = document.querySelector(targetSelector);
-            if (block) {
-                block.classList.add('block-outlined');
-                block.scrollIntoView({ behavior: 'smooth' });
-                setTimeout(function() {
-                    block.classList.remove('block-outlined');
-                    document.documentElement.classList.remove('menu-open');
-                }, 100); // Remove the outlined effect after 100 milliseconds
-            }
+document.querySelectorAll('.link__menu').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        // Find the element with the data-target attribute
+        var targetElement = event.target.closest('[data-target]');
+        if (!targetElement) return; // Exit if no such element
+
+        var targetSelector = targetElement.getAttribute('data-target');
+        var block = document.querySelector(targetSelector);
+        if (block) {
+            block.classList.add('block-outlined');
+            block.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(function() {
+                block.classList.remove('block-outlined');
+                document.documentElement.classList.remove('menu-open');
+            }, 1000); 
+        }
+    });
+});
+
+
+
+
+// DOWNLOAD IMAGE
+const downloadButton = document.querySelector('.slider__circle span');
+        const image = document.getElementById('enlarged-image');
+
+        downloadButton.addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.href = image.src;
+            link.download = 'image.jpg';  // Имя файла при скачивании
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
-    });
 
-// CINEMA
-    document.getElementById('cinemas__read-more1').addEventListener('click', function() {
-        var block = document.querySelector('.block__projects1');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-            // Закрываем меню после прокрутки
-            document.documentElement.classList.remove('menu-open');
-        }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-    document.getElementById('cinemas__read-more2').addEventListener('click', function() {
-        var block = document.querySelector('.block__projects2');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-            // Закрываем меню после прокрутки
-            document.documentElement.classList.remove('menu-open');
-        }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-    document.getElementById('cinemas__read-more3').addEventListener('click', function() {
-        var block = document.querySelector('.block__projects3');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-            // Закрываем меню после прокрутки
-            document.documentElement.classList.remove('menu-open');
-        }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-
-
-
-// Default Container images
-    document.getElementById('image-project1').addEventListener('click', function() {
-        var block = document.querySelector('.block__projects1');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-        }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-    document.getElementById('image-project2').addEventListener('click', function() {
-        var block = document.querySelector('.block__projects2');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-        }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-    document.getElementById('image-project3').addEventListener('click', function() {
-        var block = document.querySelector('.block__projects3');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-        }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
-    document.getElementById('image-project4').addEventListener('click', function() {
-        var block = document.querySelector('.block__projects4');
-        block.classList.add('block-outlined');
-        block.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-            block.classList.remove('block-outlined');
-        }, 1000); // Remove the outlined effect after 1 second (1000 milliseconds)
-    });
     // Button Default Container
     document.getElementById('default-container__button').addEventListener('click', function() {
         var block = document.querySelector('.section-wrapper__projects');
@@ -265,5 +145,85 @@ document.querySelectorAll('.menu__link').forEach(function(link) {
             }
         });
     });
+// CINEMAS ANIMATION - BLOCK APPEAREANS
+    const cinemaSection = document.querySelector('.cinema');
+    const cinemaCards = document.querySelectorAll('.cinemas__card');
+
+    if (cinemaSection && cinemaCards.length > 0) {
+        const cinemaObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    cinemaCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 200); // Задержка для очерёдности
+                    });
+                    cinemaObserver.unobserve(cinemaSection); // Остановить наблюдение после срабатывания
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        cinemaObserver.observe(cinemaSection);
+    } else {
+        console.error('Cinema section or cards not found');
+    }
+
+    // PLAYER ANIMATION - BLOCK APPEAREANS
+    const playerWrapper = document.querySelector('.player__wrapp');
+
+    if (playerWrapper) {
+        const playerObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    playerWrapper.classList.add('visible');
+                    playerObserver.unobserve(playerWrapper); // Остановить наблюдение после срабатывания
+                }
+            });
+        }, {
+            threshold: 0.4
+        });
+        playerObserver.observe(playerWrapper);
+    } else {
+        console.error('Player wrapper not found');
+    }
+
+    // ABOUT US ANIMATION - BLOCK APPEAREANS
+// ABOUT US ANIMATION - BLOCK APPEAREANS
+const usBodySections = document.querySelectorAll('.us__body');
+usBodySections.forEach(usBodySection => {
+    const usBodyObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                usBodyObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    usBodyObserver.observe(usBodySection);
+});
+
+
+const aboutUsSectionReverse = document.querySelector('.about-us__body.about-us__body--reverse');
+const aboutUsObserverReverse = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            aboutUsObserverReverse.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1
+});
+aboutUsObserverReverse.observe(aboutUsSectionReverse);
+
+
+
+
 
 });
+
