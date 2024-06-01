@@ -8,9 +8,9 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="assets/css/styles-for-animations.css">
       
-      <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
-      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> <!-- Icons -->
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"> 
   
   <script src="https://cdn.plyr.io/3.6.3/plyr.js" async></script>
   <script src="./dist/app.js" async></script>
@@ -27,70 +27,69 @@
             </a>
             <nav class="header__menu menu">
                 <div class="menu__body">
-                    <!-- <button class="menu__icon icon-menu" type="button"></button> -->
                     <ul class="menu__list desktop__menu">
                         <li class="menu__item">
                             <i class="fa-solid foot-ico fa-person"></i>
-                            <span class="menu__link" id="menu__curators" data-target=".curators__wrapper">Куратори</span>
+                            <span class="menu__link link__menu" data-target=".curators__wrapper">Куратори</span>
                         </li>
                         <li class="menu__item">
                             <i class="fa-solid foot-ico fa-phone"></i>
-                            <span class="menu__link" id="menu__contact" data-target=".contact__wrapper">Kонтакти</span>
+                            <span class="menu__link link__menu" data-target=".contact__wrapper">Kонтакти</span>
                         </li> 
                         <li class="menu__item">
                             <i class="fa-solid foot-ico fa-video"></i>
-                            <span class="menu__link" id="menu__process">Процес</span>
+                            <span class="menu__link link__menu" data-target=".section__classes">Процес</span>
                         </li>
                     </ul>
                     <ul class="menu__list mobile__menu">
                         <li class="menu__item">
                             <i class="fa-solid foot-ico fa-phone" style="width: 31px; height: 25px;"></i>
-                            <span class="menu__link" id="menu__contact" data-target=".contact__wrapper">Kонтакти</span>
+                            <span class="menu__link link__menu" data-target=".contact__wrapper">Kонтакти</span>
                         </li> 
                         <li class="menu__item">
                             <i class="fa-solid foot-ico fa-question" style="width: 31px; height: 25px;"></i>
-                            <span class="menu__link" id="menu__question" data-target=".question__wrapper">Запитання</span>
+                            <span class="menu__link link__menu" data-target=".question__wrapper">Запитання</span>
                         </li>
                         <li class="menu__item">
                             <i class="fa-solid foot-ico fa-users" style="width: 31px; height: 25px;"></i>
-                            <span class="menu__link" id="menu__about-us" data-target=".about-us__wrapper">Про нас</span>
+                            <span class="menu__link link__menu" data-target=".about-us__wrapper">Про нас</span>
                         </li>
                         <li class="menu__item">
                             <i class="fa-solid foot-ico fa-video" style="width: 31px; height: 25px;"></i>
-                            <span class="menu__link" id="menu__process" data-target=".section__classes">Процес</span>
+                            <span class="menu__link link__menu" data-target=".section__classes">Процес</span>
                         </li>
                         <li class="menu__item">
                             <i class="fa-solid foot-ico fa-person" style="width: 31px; height: 25px;"></i>
-                            <span class="menu__link" id="menu__curators" data-target=".curators__wrapper">Куратори</span>
+                            <span class="menu__link link__menu" data-target=".curators__wrapper">Куратори</span>
                         </li>
                         <li class="menu__item">
                             <i class="fa-solid foot-ico fa-people-group" style="width: 31px; height: 25px;"></i>
-                            <span class="menu__link" id="menu__team" data-target=".section__team">Команда</span>
+                            <span class="menu__link link__menu" data-target=".section__team">Команда</span>
                         </li>
                     </ul>
                         <div class="menu-item__icon">
                             <ul class="list social-media__header">
                                 <li class="list-item">
-                                    <a href="#" class="list-link"><i class="ri-instagram-line"></i></a>
+                                    <a href="#" class="list-link link__menu"><i class="ri-instagram-line"></i></a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="#" class="list-link"><i class="ri-youtube-line"></i></a>
+                                    <a href="#" class="list-link link__menu"><i class="ri-youtube-line"></i></a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="#" class="list-link"><i class="ri-facebook-circle-line"></i></a>
+                                    <a href="#" class="list-link link__menu"><i class="ri-facebook-circle-line"></i></a>
                                 </li>
                                 <li class="list-item">
-                                    <a href="#" class="list-link"><i class="ri-twitter-line"></i></a>
+                                    <a href="#" class="list-link link__menu"><i class="ri-twitter-line"></i></a>
                                 </li>
                             </ul>
                         </div>
                 </div>
             </nav>
             <div class="header__cart cart-header">
-                <span class="cart-header__text" id="cart-header__text">Проєкти</span>
-                <span class="cart-header__quantity" id="cart-header__quantity" title="Проєкти">5</span>
+                <span class="cart-header__text link__menu" data-target=".section-wrapper__projects">Проєкти</span>
+                <span class="cart-header__quantity link__menu" data-target=".section-wrapper__projects" title="Проєкти">5</span>
             </div>
-            <div href="#" class="header__button button" id="header__button">В команду</div>
+            <div href="#" class="header__button button link__menu" data-target=".contact__wrapper">В команду</div>
             <div class="menu__icon icon-menu" type="button">
                 <span></span>
             </div>
@@ -98,7 +97,6 @@
     </header>
 
 <div class="wrapper">
-
 <section class="section__main">
     <div class="main__wrapper">
         <div class="main__body">
@@ -133,9 +131,9 @@
         
     </section> -->
 <section class="cinema">
-    <div class="cinemas">
+    <div class="cinemas link__menu">
         <div class="cinemas__card" style="--clr:#009688">
-            <div class="imgbx">
+            <div class="imgbx" data-target=".block__projects1">
                 <img decoding="async" loading="lazy" src="assets/img/media/our project/project1.png" alt="За Обрiй">
             </div>
             <div class="cinemas__content">
@@ -143,13 +141,13 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quas dolorum
                      voluptates corrupti tenetur a optio alias dolore praesentium? Sapiente tempore recusandae obcaecati, 
                     enim veritatis ex eveniet voluptatem nobis nulla?</p>
-                    <div id="cinemas__read-more1">ЧИТАТИ БiЛЬШЕ</div>
+                    <div data-target=".block__projects1">ЧИТАТИ БiЛЬШЕ</div>
             </div>
         </div>
     </div>
-    <div class="cinemas">
+    <div class="cinemas link__menu" data-target=".block__projects2">
         <div class="cinemas__card" style="--clr:#ff3e7f">
-            <div class="imgbx">
+            <div class="imgbx" data-target=".block__projects2">
                 <img decoding="async" loading="lazy" src="assets/img/media/our project/project2.png" alt="Сутерени">
             </div>
             <div class="cinemas__content">
@@ -157,13 +155,13 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quas dolorum
                      voluptates corrupti tenetur a optio alias dolore praesentium? Sapiente tempore recusandae obcaecati, 
                     enim veritatis ex eveniet voluptatem nobis nulla?</p>
-                    <div id="cinemas__read-more2">ЧИТАТИ БiЛЬШЕ</div>
+                    <div data-target=".block__projects2">ЧИТАТИ БiЛЬШЕ</div>
             </div>
         </div>
     </div>
-    <div class="cinemas">
+    <div class="cinemas link__menu" data-target=".block__projects3">
         <div class="cinemas__card" style="--clr:#03a9f4">
-            <div class="imgbx">
+            <div class="imgbx" data-target=".block__projects3">
                 <img decoding="async" loading="lazy" src="assets/img/media/our project/project3.png" alt="Ksora">
             </div>
             <div class="cinemas__content">
@@ -171,11 +169,11 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quas dolorum
                      voluptates corrupti tenetur a optio alias dolore praesentium? Sapiente tempore recusandae obcaecati, 
                     enim veritatis ex eveniet voluptatem nobis nulla?</p>
-                    <div id="cinemas__read-more3">ЧИТАТИ БiЛЬШЕ</div>
+                    <div data-target=".block__projects3">ЧИТАТИ БiЛЬШЕ</div>
             </div>
         </div>
-    </div></section>
-<hr>
+    </div>
+</section>
 <section class="section__classes">
     <div class="classes animated-text animate__animated animate__bounceIn" id="classes">Як проходять нашi заняття: </div>
         <div class="player__wrapp">
@@ -217,7 +215,7 @@
 <section class="about-us__wrapper">
     <h2 class="about-us__title">Чому вчитися акторським навичкам це класно?</h2>
     
-    <div class="about-us__body">
+    <div class="about-us__body us__body">
         <div class="about-us__image">
             <img src="assets/img/media/team/image-team5.png" alt="Computer with learning platform">
         </div>
@@ -237,7 +235,7 @@
         </div>
     </div>
     
-    <div class="about-us__body">
+    <div class="about-us__body us__body">
         <div class="about-us__image">
             <img src="assets/img/media/team/image-team5.png" alt="Student studying online">
         </div>
@@ -300,30 +298,30 @@
     <div class="default-container__viev-all">
         <p id="default-container__p">Перегляньте нашу колекцію захоплюючих студійних фільмів</p>
     </div>
-    <div class="posters-now">
+    <div class="posters-now link__menu" data-target="#target1">
         <div class="poster-now">
-            <img decoding="async" loading="lazy" src="assets/img/media/our project/project1.png" alt="За обрій" id="image-project1">
+            <img decoding="async" loading="lazy" src="assets/img/media/our project/project1.png" alt="За обрій" data-target=".block__projects1">
             <div class="poster-label">
                 <p>MOVIE</p>
                 <p>За Обрiй</p>
             </div>
         </div>
         <div class="poster-now">
-            <img decoding="async" loading="lazy" src="assets/img/media/our project/project2.png" alt="Сутерени"  id="image-project2">
+            <img decoding="async" loading="lazy" src="assets/img/media/our project/project2.png" alt="Сутерени" data-target=".block__projects2">
             <div class="poster-label">
                 <p>MOVIE</p>
                 <p>Сутерени</p>
             </div>
         </div>
         <div class="poster-now">
-            <img  decoding="async" loading="lazy" src="assets/img/media/our project/project3.png" alt="Ksora"  id="image-project3">
+            <img  decoding="async" loading="lazy" src="assets/img/media/our project/project3.png" alt="Ksora" data-target=".block__projects3">
             <div class="poster-label">
                 <p>MOVIE</p>
                 <p>KSORA</p>
             </div>
         </div>
         <div class="poster-now">
-            <img decoding="async" loading="lazy" src="assets/img/media/our project/project4.png" alt="кльовн"  id="image-project4">
+            <img decoding="async" loading="lazy" src="assets/img/media/our project/project4.png" alt="кльовн" data-target=".block__projects4">
             <div class="poster-label">
                 <p>MOVIE</p>
                 <p>KL'OVN</p>
@@ -397,19 +395,6 @@
   <div class="slider__circle">
     <span class="download-span"></span>
   </div>
-  <script type="text/javascript">
-      const downloadButton = document.querySelector('.slider__circle span');
-        const image = document.getElementById('enlarged-image');
-
-        downloadButton.addEventListener('click', function() {
-            const link = document.createElement('a');
-            link.href = image.src;
-            link.download = 'image.jpg';  // Имя файла при скачивании
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-  </script>
 </div>
 <section class="section__team">
     <div class="team">
@@ -574,7 +559,6 @@
                             <path fill="currentColor" d="M2 35L4.6 27.2C-0.0479994 20.326 1.748 11.456 8.8 6.452C15.852 1.45 25.98 1.86 32.49 7.412C39 12.966 39.88 21.944 34.548 28.414C29.216 34.884 19.318 36.844 11.4 33L2 35Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
                 </div>
-
                     <input type="submit" value="НАДІСЛАТИ">
                 </form>
             </div>
@@ -712,28 +696,40 @@
             <div class="box-list__footer">
                 <ul class="footer-list list">
                         <li class="list__item">
-                            <i class="fa-brands foot-ico fa-youtube menu__link" style="width: 31px; height: 25px; margin: 0 20px !important;"></i>
+                            <i class="fa-brands foot-ico fa-youtube menu__link" 
+                               style="width: 31px; height: 25px; margin: 0 20px !important;">
+                            </i>
                             <a href="https://www.youtube.com/@kurazh_studio" class="list-link menu__link">YouTube</a>
                         </li>
                         <li class="list__item">
-                            <i class="fa-solid foot-ico fa-phone" style="font-size: 32px;width: 31px; height: 25px; margin: 0 10px 0 20px !important;"></i>
-                            <span class="list__link menu__link" id="menu__contact" data-target=".contact__wrapper">Kонтакти</span>
+                            <i class="fa-solid foot-ico fa-phone" 
+                               style="font-size: 32px;width: 31px; height: 25px; margin: 0 10px 0 20px !important;">
+                            </i>
+                            <span class="list__link menu__link link__menu" id="menu__contact" data-target=".contact__wrapper">Kонтакти</span>
                         </li> 
                         <li class="list__item">
-                            <i class="fa-solid foot-ico fa-question" style="font-size: 32px;width: 31px; height: 25px; margin: 0 10px 0 20px !important;"></i>
-                            <span class="list__link menu__link" id="menu__question" data-target=".question__wrapper">Запитання</span>
+                            <i class="fa-solid foot-ico fa-question" 
+                               style="font-size: 32px;width: 31px; height: 25px; margin: 0 10px 0 20px !important;">
+                            </i>
+                            <span class="list__link menu__link link__menu" id="menu__question" data-target=".question__wrapper">Запитання</span>
                         </li>
                         <li class="list__item">
-                            <i class="fa-solid foot-ico fa-users" style="font-size: 32px;width: 31px; height: 25px; margin: 0 10px 0 20px !important;"></i>
-                            <span class="list__link menu__link" id="menu__about-us" data-target=".about-us__wrapper">Про нас</span>
+                            <i class="fa-solid foot-ico fa-users" 
+                               style="font-size: 32px;width: 31px; height: 25px; margin: 0 10px 0 20px !important;">
+                            </i>
+                            <span class="list__link menu__link link__menu" id="menu__about-us" data-target=".about-us__wrapper">Про нас</span>
                         </li>
                         <li class="list__item">
-                            <i class="fa-solid foot-ico fa-person" style="font-size: 32px;width: 31px; height: 25px; margin: 0 10px 0 20px !important;"></i>
-                            <span class="list__link menu__link" id="menu__curators" data-target=".curators__wrapper">Куратори</span>
+                            <i class="fa-solid foot-ico fa-person" 
+                               style="font-size: 32px;width: 31px; height: 25px; margin: 0 10px 0 20px !important;">
+                            </i>
+                            <span class="list__link menu__link link__menu" id="menu__curators" data-target=".curators__wrapper">Куратори</span>
                         </li>
                         <li class="list__item">
-                            <i class="fa-solid foot-ico fa-people-group" style="font-size: 32px;width: 31px; height: 25px; margin: 0 10px 0 20px !important;"></i>
-                            <span class="list__link menu__link" id="menu__team" data-target=".section__team">Команда</span>
+                            <i class="fa-solid foot-ico fa-people-group" 
+                               style="font-size: 32px;width: 31px; height: 25px; margin: 0 10px 0 20px !important;">
+                            </i>
+                            <span class="list__link menu__link link__menu" id="menu__team" data-target=".section__team">Команда</span>
                         </li>
                     </ul>
             </div>
