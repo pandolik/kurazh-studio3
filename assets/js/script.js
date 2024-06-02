@@ -180,23 +180,23 @@ arrowTop.addEventListener('click', () => {
     }
 
 // PLAYER ANIMATION - BLOCK APPEAREANS
-    const playerWrapper = document.querySelector('.player__wrapp');
+    // const playerWrapper = document.querySelector('.player__wrapp');
 
-    if (playerWrapper) {
-        const playerObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    playerWrapper.classList.add('visible');
-                    playerObserver.unobserve(playerWrapper); // Остановить наблюдение после срабатывания
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
-        playerObserver.observe(playerWrapper);
-    } else {
-        console.error('Player wrapper not found');
-    }
+    // if (playerWrapper) {
+    //     const playerObserver = new IntersectionObserver(entries => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 playerWrapper.classList.add('visible');
+    //                 playerObserver.unobserve(playerWrapper); // Остановить наблюдение после срабатывания
+    //             }
+    //         });
+    //     }, {
+    //         threshold: 0.2
+    //     });
+    //     playerObserver.observe(playerWrapper);
+    // } else {
+    //     console.error('Player wrapper not found');
+    // }
 
 // ABOUT US ANIMATION - BLOCK APPEAREANS
 const usBodySections = document.querySelectorAll('.us__body');
@@ -229,5 +229,27 @@ aboutUsObserverReverse.observe(aboutUsSectionReverse);
 
 
 
+
+// CURATORS ANIMATION - BLOCK APPEAREANS
+const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const curators1 = document.querySelector('.curators__1');
+    const curators2 = document.querySelector('.curators__2');
+
+    observer.observe(curators1);
+    observer.observe(curators2);
 
 });
