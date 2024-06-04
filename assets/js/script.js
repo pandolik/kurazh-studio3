@@ -120,7 +120,7 @@ arrowTop.addEventListener('click', () => {
     }
 
 // Animation in Default-container section
-    const fadeInElements = ['default-container__p', 'default-container__text', 'classes', 'default-container__button'];
+    const fadeInElements = ['default-container__p', 'default-container__text', 'classes'];
 
     fadeInElements.forEach(elementId => {
         fadeInOnScroll(elementId, 100);
@@ -231,25 +231,59 @@ aboutUsObserverReverse.observe(aboutUsSectionReverse);
 
 
 // CURATORS ANIMATION - BLOCK APPEAREANS
-const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+    // Опции для первого наблюдателя
+    const addVisibleClass = (entries, observer, delayMultiplier) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * delayMultiplier); // Задержка для каждого элемента
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+            const observerOptions1 = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
-    const curators1 = document.querySelector('.curators__1');
-    const curators2 = document.querySelector('.curators__2');
+            const observerOptions2 = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
 
-    observer.observe(curators1);
-    observer.observe(curators2);
+            const observer1 = new IntersectionObserver((entries, observer) => {
+                addVisibleClass(entries, observer, 400);
+            }, observerOptions1);
+
+            const observer2 = new IntersectionObserver((entries, observer) => {
+                addVisibleClass(entries, observer, 500);
+            }, observerOptions2);
+
+            // Наблюдение за блоками info__block
+            const infoBlocks = document.querySelectorAll('.info__block');
+            infoBlocks.forEach((block) => {
+                observer1.observe(block);
+            });
+
+            // Наблюдение за секцией team
+            const sectionTeam = document.querySelector('.section__team');
+            observer1.observe(sectionTeam);
+
+            // Наблюдение за блоками curators и posters
+            const curators1 = document.querySelector('.curators__1');
+            const curators2 = document.querySelector('.curators__2');
+            const posters = document.querySelectorAll('.poster-now');
+
+            observer2.observe(curators1);
+            observer2.observe(curators2);
+            posters.forEach((poster) => {
+                observer2.observe(poster);
+            });
+
+
 
 });
