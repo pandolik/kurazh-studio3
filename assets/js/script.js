@@ -286,4 +286,12 @@ aboutUsObserverReverse.observe(aboutUsSectionReverse);
 
 
 
+
+
+
+
+
+// MESSAGE FOR FEEDBACK FORM
+
+
 });
