@@ -154,31 +154,6 @@ arrowTop.addEventListener('click', () => {
         });
     });
 
-// CINEMAS ANIMATION - BLOCK APPEAREANS
-    const cinemaSection = document.querySelector('.cinema');
-    const cinemaCards = document.querySelectorAll('.cinemas__card');
-
-    if (cinemaSection && cinemaCards.length > 0) {
-        const cinemaObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    cinemaCards.forEach((card, index) => {
-                        setTimeout(() => {
-                            card.classList.add('visible');
-                        }, index * 200); // Задержка для очерёдности
-                    });
-                    cinemaObserver.unobserve(cinemaSection); // Остановить наблюдение после срабатывания
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        cinemaObserver.observe(cinemaSection);
-    } else {
-        console.error('Cinema section or cards not found');
-    }
-
 // PLAYER ANIMATION - BLOCK APPEAREANS
     // const playerWrapper = document.querySelector('.player__wrapp');
 
@@ -252,7 +227,7 @@ aboutUsObserverReverse.observe(aboutUsSectionReverse);
             const observerOptions2 = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.5
+                threshold: 0.1
             };
 
             const observer1 = new IntersectionObserver((entries, observer) => {
