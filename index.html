@@ -125,56 +125,6 @@
     </div>
 </section>
 <main class="page">
-
-
-
-    <!-- <section class="info">
-        
-    </section> -->
-<section class="cinema link__menu">
-    <div class="cinemas">
-        <div class="cinemas__card" style="--clr:#009688">
-            <div class="imgbx">
-                <img decoding="async" loading="lazy" src="assets/img/media/our project/project1.png" alt="За Обрiй">
-            </div>
-            <div class="cinemas__content">
-                <h2>ЗА ОБРIЙ</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quas dolorum
-                     voluptates corrupti tenetur a optio alias dolore praesentium? Sapiente tempore recusandae obcaecati, 
-                    enim veritatis ex eveniet voluptatem nobis nulla?</p>
-                    <div data-target=".block__projects1">ЧИТАТИ БiЛЬШЕ</div>
-            </div>
-        </div>
-    </div>
-    <div class="cinemas">
-        <div class="cinemas__card" style="--clr:#ff3e7f">
-            <div class="imgbx">
-                <img decoding="async" loading="lazy" src="assets/img/media/our project/project2.png" alt="Сутерени">
-            </div>
-            <div class="cinemas__content">
-                <h2>СУТЕРЕНИ</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quas dolorum
-                     voluptates corrupti tenetur a optio alias dolore praesentium? Sapiente tempore recusandae obcaecati, 
-                    enim veritatis ex eveniet voluptatem nobis nulla?</p>
-                    <div data-target=".block__projects2">ЧИТАТИ БiЛЬШЕ</div>
-            </div>
-        </div>
-    </div>
-    <div class="cinemas">
-        <div class="cinemas__card" style="--clr:#03a9f4">
-            <div class="imgbx">
-                <img decoding="async" loading="lazy" src="assets/img/media/our project/project3.png" alt="Ksora">
-            </div>
-            <div class="cinemas__content">
-                 <h2>KSORA</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quas dolorum
-                     voluptates corrupti tenetur a optio alias dolore praesentium? Sapiente tempore recusandae obcaecati, 
-                    enim veritatis ex eveniet voluptatem nobis nulla?</p>
-                    <div data-target=".block__projects3">ЧИТАТИ БiЛЬШЕ</div>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="section__classes">
     <div class="classes animated-text animate__animated animate__bounceIn" id="classes">Як проходять нашi заняття: </div>
         <div class="player__wrapp">
@@ -556,7 +506,7 @@
     <div class="contact__body">
         <div class="contact__left">
             <div class="feedback-form">
-                <form action="/submit_feedback" method="post">
+                <form id="myForm" action="/submit_feedback" method="post">
                     <input type="text" id="name" name="name" placeholder="ІМ'Я" required>
                     <input type="email" id="email" name="email" placeholder="ЕЛЕКТРОННА АДРЕСА" required>
                     <div style="position: relative;">
@@ -565,9 +515,12 @@
                             <!-- Your SVG icon code here -->
                             <path fill="currentColor" d="M2 35L4.6 27.2C-0.0479994 20.326 1.748 11.456 8.8 6.452C15.852 1.45 25.98 1.86 32.49 7.412C39 12.966 39.88 21.944 34.548 28.414C29.216 34.884 19.318 36.844 11.4 33L2 35Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
-                </div>
+                    </div>
                     <input type="submit" value="НАДІСЛАТИ">
                 </form>
+            </div>
+            <div id="thankYouMessage" class="hidden">
+                <h2>Дякуємо за ваш відгук!</h2>
             </div>
         </div>
 <hr>
