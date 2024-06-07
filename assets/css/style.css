@@ -662,7 +662,7 @@ section {
 @media (max-width: 767.98px) {
 .player__video {
 
-    height: 70vh !important;
+    height: 90vh !important;
 }
 }
 @media (max-width: 634px) {
@@ -675,7 +675,7 @@ section {
         font-size: 30px;
 }
 .player__video {
-    height: 60vh !important;
+    height: 90vh !important;
 }
 
 }
@@ -685,7 +685,7 @@ section {
         margin: 0 0 12px 0;
 }
 .player__video {
-    height: 40vh !important;
+    height: 90vh !important;
 }
 }
 /*-----------------------------ABOUT US SECTION-----------------------------*/
@@ -1038,7 +1038,6 @@ section {
 .poster-now img:hover {
     cursor: pointer;
     transform: scale(1.04);
-    background-color: #fff;
 }
 .poster-label {
    font-size: 36px;
@@ -1678,7 +1677,6 @@ section {
     justify-content: flex-end;
     font-weight: 500;
     line-height: 2;
-    font-size: auto;
     letter-spacing: 1px;
 }
 #hidden__block {
@@ -1726,7 +1724,6 @@ section {
     margin: 0;
     font-weight: 500;
     line-height: 2;
-    font-size: auto;
     letter-spacing: 1px;
     padding: 0 10px 10px 40px;
 }
@@ -1781,11 +1778,11 @@ button#button-for-the-section-our-films {
 }
 
 /*-----------------QUESTIONS----------------*/
-.question__wrapper {
+/*.question__wrapper {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    background-color: #f0f6f9;
+    background-color: #727f86;
     color: #000;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
@@ -1794,6 +1791,7 @@ button#button-for-the-section-our-films {
     font-size: clamp(25px, 5vw, 52px);
     font-weight: 600;
     text-align: left;
+    color: #fff;
 }
 .question__block {
     padding: 40px;
@@ -1828,6 +1826,7 @@ button#button-for-the-section-our-films {
     margin: 0;
     font-size: clamp(18px, 5vw, 25px);
     flex-grow: 1;
+    color: inherit;
 }
 .question__button svg {
     flex-shrink: 0;
@@ -1848,7 +1847,7 @@ button#button-for-the-section-our-films {
 }
 .question__button svg.rotate {
     transform: rotate(180deg);
-}
+}*/
 /*.more-questions {
     margin-top: 20px;
 }
@@ -1867,7 +1866,7 @@ button#button-for-the-section-our-films {
 .more-questions button:hover {
     background-color: #45a57c;
 }*/
-@media(max-width:767.98px) {
+/*@media(max-width:767.98px) {
     .question__body {
         flex-direction: column;
     }
@@ -1880,21 +1879,20 @@ button#button-for-the-section-our-films {
 }
 @media(max-width:449.98px) {
     .question__block {padding: 0}
-}
+}*/
 /*---------------------CONTACT SECTION------------------------*/
 .contact__wrapper {
-  font-family: "Gerhaus", sans-serif;
+  font-family: "Gerhaus", sans-serif; /* Если шрифт не загрузится, будет использоваться альтернативный шрифт */
   width: 100%;
   height: 725px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .contact__body hr {display: none;}
-.contact__wrapper h2 {
+.contact__wrapper h1 {
     text-align: center;
-    font-size: clamp(30px, 3vw, 96px);
+    font-size: 96px;
     padding: 20px;
-    font-weight: 700;
 }
     .contact__left {float: left;max-width: 40%;width: 100%;}
     .feedback-form {
@@ -1942,9 +1940,6 @@ button#button-for-the-section-our-films {
       letter-spacing: 1px;
       height: 50px;
     }
-    .hidden {
-        visibility: hidden;
-    }
     .feedback-form input[type="submit"]:hover {
       background-color: #fff;
       color: #343434;
@@ -1953,15 +1948,16 @@ button#button-for-the-section-our-films {
     }
     .icon {
         position: absolute;
-        bottom: 30px; 
-        right: 10px; 
-        pointer-events: none; 
+        bottom: 30px; /* Adjust the positioning as needed */
+        right: 10px; /* Adjust the positioning as needed */
+        pointer-events: none; /* Ensure the icon doesn't interfere with textarea interaction */
     }
 
     #message {
         position: relative;
-        padding-right: 30px;
+        padding-right: 30px; /* Ensure space for the icon */
     }
+
 
 .contact__right {max-width: 60%;float: right; width: 100%;}
 gmp-map {
@@ -2043,7 +2039,6 @@ gmp-map {
   opacity: 0;
   box-shadow: 0 0 0 1px #fff;
   transition: all .2s ease-in-out;
-  pointer-events: none;
 }
 .social-media-list li:hover {
   background-color: #fff; 
@@ -2106,6 +2101,7 @@ textarea::placeholder {
 .contact__left {
     padding: 0 10%;
 }
+.contact__wrapper h1 {font-size: 64px;}
 .contact__left {
     padding: 0 0;
     margin: 0;
@@ -2117,12 +2113,8 @@ textarea::placeholder {
   font-size: 20px;
 }
 }
-@media (max-width: 560px) {
-.contact__wrapper h2 {
-    border-bottom: 3px #fff solid;border-width: 15%;
-}
-}
 @media (max-width: 449px) {
+.contact__wrapper h1 {font-size: 44px;} 
 .place {
   margin-left: 0;
 }

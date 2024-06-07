@@ -1,4 +1,3 @@
-// ----------SLIDER-----------
 var radius = 440; // how big of the radius
 var autoRotate = true; // auto rotate or not
 var rotateSpeed = -60; // unit: seconds/360 degrees
@@ -90,12 +89,12 @@ if (autoRotate) {
 }
 
 // setup events
-document.onpointerdown = function (e) {
+odrag.onpointerdown = function (e) {
   clearInterval(odrag.timer);
   e = e || window.event;
   var sX = e.clientX, sY = e.clientY;
 
-  this.onpointermove = function (e) {
+  document.onpointermove = function (e) {
     e = e || window.event;
     var nX = e.clientX, nY = e.clientY;
     desX = nX - sX;
@@ -107,7 +106,7 @@ document.onpointerdown = function (e) {
     sY = nY;
   };
 
-  this.onpointerup = function (e) {
+  document.onpointerup = function (e) {
     odrag.timer = setInterval(function () {
       desX *= 0.95;
       desY *= 0.95;
@@ -120,13 +119,11 @@ document.onpointerdown = function (e) {
         playSpin(true);
       }
     }, 17);
-    this.onpointermove = this.onpointerup = null;
+    document.onpointermove = document.onpointerup = null;
   };
-
-  return false;
 };
 
-document.onmousewheel = function (e) {
+odrag.onmousewheel = function (e) {
   e = e || window.event;
   var d = e.wheelDelta / 20 || -e.detail;
   radius += d;
@@ -134,25 +131,42 @@ document.onmousewheel = function (e) {
 };
 
 window.addEventListener('resize', updateImageSizes);
-
 document.addEventListener('DOMContentLoaded', () => {
+  // Make sure the elements with these IDs exist in the HTML
   const enlargedSection = document.getElementById('enlarged-section');
   const enlargedImage = document.getElementById('enlarged-image');
   const closeButton = document.getElementById('close-button');
   const aImg = document.querySelectorAll('#spin-container img');
 
+  // Check if the elements exist
+  if (!enlargedSection || !enlargedImage || !closeButton) {
+    console.error('One or more elements are missing');
+    return;
+  }
+
+  // Adding click event listeners to images inside the spin-container
   Array.from(aImg).forEach(img => {
     img.addEventListener('click', (e) => {
       e.stopPropagation();
+      
+      // Ensure playSpin is defined
+      if (typeof playSpin !== 'function') {
+        console.error('playSpin function is not defined');
+        return;
+      }
+      
       playSpin(false);
       enlargedImage.src = img.src;
       enlargedSection.style.display = 'flex';
+      
+      // Small delay to allow the browser to repaint and add the 'show' class
       setTimeout(() => {
         enlargedSection.classList.add('show');
       }, 10);
     });
   });
 
+  // Function to close the enlarged section
   const closeEnlargedSection = () => {
     enlargedSection.classList.remove('show');
     setTimeout(() => {
@@ -161,12 +175,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
   };
 
+  // Adding click event listener to the close button
   closeButton.addEventListener('click', (e) => {
     e.stopPropagation();
     closeEnlargedSection();
   });
 
+  // Adding click event listener to the document to close the enlarged section
   document.addEventListener('click', closeEnlargedSection);
+
+  // Prevent propagation of click events on enlargedSection and enlargedImage
   enlargedSection.addEventListener('click', (e) => {
     e.stopPropagation();
   });
@@ -174,4 +192,3 @@ document.addEventListener('DOMContentLoaded', () => {
     e.stopPropagation();
   });
 });
-
