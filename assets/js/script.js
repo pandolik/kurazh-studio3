@@ -120,7 +120,7 @@ arrowTop.addEventListener('click', () => {
     }
 
 // Animation in Default-container section
-    const fadeInElements = ['default-container__p', 'default-container__text', 'classes'];
+    const fadeInElements = ['default-container__p', 'default-container__text', 'classes', 'curators__title', 'about-us__title', 'contact__title'];
 
     fadeInElements.forEach(elementId => {
         fadeInOnScroll(elementId, 100);
@@ -175,6 +175,7 @@ arrowTop.addEventListener('click', () => {
 
 // ABOUT US ANIMATION - BLOCK APPEAREANS
 const usBodySections = document.querySelectorAll('.us__body');
+
 usBodySections.forEach(usBodySection => {
     const usBodyObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -188,6 +189,24 @@ usBodySections.forEach(usBodySection => {
     });
     usBodyObserver.observe(usBodySection);
 });
+
+
+const contactBodySections = document.querySelectorAll('.contact__body');
+
+    contactBodySections.forEach(contactBodySection => {
+        const contactBodyObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    contactBodyObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        contactBodyObserver.observe(contactBodySection);
+    });
+
 
 const aboutUsSectionReverse = document.querySelector('.about-us__body.about-us__body--reverse');
 const aboutUsObserverReverse = new IntersectionObserver(entries => {

@@ -2,9 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600;700&display=swap');
 
-section {
-    margin: 30px 0;
-}
 .wrapper {
     min-height: 100%;
     display: flex;
@@ -14,7 +11,7 @@ section {
 [class*="wrapper"] {
     max-width: 1920px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 15px 0;
 }
 
 .list-link:hover {
@@ -1889,6 +1886,11 @@ button#button-for-the-section-our-films {
 }
 
 .contact__body hr {display: none;}
+.contact__body {opacity: 0; transform: translateX(100%); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+.contact__body.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
 .contact__wrapper h1 {
     text-align: center;
     font-size: 96px;
