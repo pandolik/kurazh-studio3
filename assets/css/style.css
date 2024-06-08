@@ -564,7 +564,7 @@
 }
 @media (max-width: 767.98px) {
     .main__wrapper {
-        margin-top: 0;
+        margin-top: 40px;
     }
     .main__btns {
         flex-direction: column;
@@ -587,9 +587,6 @@
 }
 .main-btn__more {
     padding: 15px 0;
-}
-.main-btn__more svg {
-    top: 0;
 }
 }
 /*Горизонтальні лінії*/
