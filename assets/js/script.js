@@ -73,7 +73,7 @@ arrowTop.addEventListener('click', () => {
     });
 
 // Button Default Container
-    document.getElementById('default-container__button').addEventListener('click', function () {
+    document.getElementById('default__button').addEventListener('click', function () {
         var block = document.querySelector('.section-wrapper__projects');
         block.classList.add('block-outlined');
         block.scrollIntoView({ behavior: 'smooth' });
@@ -277,11 +277,6 @@ aboutUsObserverReverse.observe(aboutUsSectionReverse);
             posters.forEach((poster) => {
                 observer2.observe(poster);
             });
-
-
-
-
-
 
 
 

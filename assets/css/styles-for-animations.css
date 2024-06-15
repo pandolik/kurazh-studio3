@@ -252,10 +252,9 @@ button>span {
   right: 66%;
 }
 
-#button-our-projects-more .right::after {
+#button-our-projects-more .right::after, #team__button .right::after, #default__button .right::after {
   top: -30px;
   left: calc(-66% - 20px);
-  
   background-color: var(--bg-color);
   color:transparent;
   transition: transform .4s ease-out;
@@ -263,23 +262,25 @@ button>span {
 }
 #button-our-projects-more button>span:hover {
   color: yellow;
-
-
 }
-#button-our-projects-more button:hover .right::after {
+#button-our-projects-more button:hover .right::after , #team__button button:hover .right::after , #default__button button:hover .right::after {
   transform: translate(0, -47%) rotate(0deg)
 }
 
-#button-our-projects-more button .right:hover::after {
+#button-our-projects-more button .right:hover::after, #team__button button .right:hover::after, #default__button button .right:hover::after {
   transform: translate(0, -50%) rotate(-7deg)
 }
 
-#button-our-projects-more button .left:hover ~ .right::after {
+#button-our-projects-more button .left:hover ~ .right::after, 
+#team__button button .left:hover ~ .right::after,
+#default__button button .left:hover ~ .right::after {
   transform: translate(0, -50%) rotate(7deg)
 }
 
 /* bubbles */
-button.animate-button-our-projects-more::before {
+button.animate-button-our-projects-more::before, 
+button#team__button::before,
+button#default__button::before {
   content: '';
   pointer-events: none;
   opacity: .9;

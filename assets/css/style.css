@@ -1,7 +1,9 @@
 @import url("reset.css");
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600;700&display=swap');
-
+:root {
+    --color-text-header: #00FFFF;
+}
 .wrapper {
     min-height: 100%;
     display: flex;
@@ -745,18 +747,20 @@
 .about-us__text button {
     padding: 24px 48px;
     margin-top: 40px;
-    background-color: #28a745;
-    color: white;
+    background-color: #686965;
+    color: lightgoldenrodyellow;
     border: none;
     border-radius: 15px;
     cursor: pointer;
     font-size: 18px;
     vertical-align: middle;
-/*    box-shadow: 6px 8px 18px rgba(255, 255, 255, 0.8); */
-    transition: .5s;
+    transition: .3s;
+    box-shadow: var(--color-text-header) 12px 12px 32px;
+    letter-spacing: 3px;
 }
 .about-us__text button:hover {
-    background-color: #4fc87b;
+    background-color: #879ebc;
+    box-shadow: 3px 3px 3px rgba(255, 235, 150, 0.9);
 }
 
 @media (max-width: 991.98px) {
@@ -1054,17 +1058,23 @@
 }
 .default-container__button > button {
     padding: 25px 35px;
-    background-color: #B0C4DE;
-    color: #333;
+    background-color: #686965;
+    color: lightgoldenrodyellow;
     font-weight: 800;
     letter-spacing: 1px;
     border-radius: 20px;
     font-size: 35px;
+    box-shadow: var(--color-text-header) 12px 12px 32px;
+    text-shadow: -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
 }
 .default-container__button > button:hover {
-    background-color: #000;
-    transition: 0.6s;
+    background-color: #879ebc;
+    transition: 0.4s;
     color: #fff;
+    box-shadow: 3px 3px 3px rgba(255, 235, 150, 0.9);
 }
 @media(min-width: 1716px) {
 .poster {
@@ -1546,19 +1556,24 @@
     padding: 20px 35px;
     margin: 30px auto;
     min-height: 100px;
-    background-color: #B0C4DE;
-    color: #303;
-    font-size: 30px;
+    background-color: #686965;
+    color: lightgoldenrodyellow;
+    font-size: clamp(20px, 5vw, 35px);
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: var(--color-text-header) 12px 12px 32px;
+    text-shadow: -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
 }
 
 .team__button-container .team__button:hover {
     background-color: #11CBD3;
-    transition: background-color .5s ease; 
+    transition: background-color .3s ease; 
 }
 
 .right__block {
@@ -1601,6 +1616,7 @@
     .right__block {
         margin-top: 10%;
     }
+    .team__button-container .team__button  {min-height: 60px;}
 }
 @media(max-width: 560px){
     .team__text {
