@@ -252,7 +252,7 @@ button>span {
   right: 66%;
 }
 
-#button-our-projects-more .right::after, #team__button .right::after, #default__button .right::after {
+#button-our-projects-more .right::after, #team__button .right::after {
   top: -30px;
   left: calc(-66% - 20px);
   background-color: var(--bg-color);
@@ -263,24 +263,22 @@ button>span {
 #button-our-projects-more button>span:hover {
   color: yellow;
 }
-#button-our-projects-more button:hover .right::after , #team__button button:hover .right::after , #default__button button:hover .right::after {
+#button-our-projects-more button:hover .right::after , #team__button button:hover .right::after {
   transform: translate(0, -47%) rotate(0deg)
 }
 
-#button-our-projects-more button .right:hover::after, #team__button button .right:hover::after, #default__button button .right:hover::after {
+#button-our-projects-more button .right:hover::after, #team__button button .right:hover::after {
   transform: translate(0, -50%) rotate(-7deg)
 }
 
 #button-our-projects-more button .left:hover ~ .right::after, 
-#team__button button .left:hover ~ .right::after,
-#default__button button .left:hover ~ .right::after {
+#team__button button .left:hover ~ .right::after {
   transform: translate(0, -50%) rotate(7deg)
 }
 
 /* bubbles */
 button.animate-button-our-projects-more::before, 
-button#team__button::before,
-button#default__button::before {
+button#team__button::before {
   content: '';
   pointer-events: none;
   opacity: .9;
@@ -297,6 +295,59 @@ button#default__button::before {
   left: 0;
   position: absolute;
   animation: bubbles 3s linear infinite both;
+}
+
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+  to {
+    transform: translate(0, -66.666%);
+  }
+}
+
+
+ #about__button .right::after {
+  top: -30px;
+  left: calc(-66% - 20px);
+  background-color: var(--bg-color);
+  color:transparent;
+  transition: transform .4s ease-out;
+  transform: translate(0, -90%) rotate(0deg)
+} #about__button button:hover .right::after {
+  transform: translate(0, -47%) rotate(0deg)
+}
+ #about__button button .right:hover::after {
+  transform: translate(0, -50%) rotate(-7deg)
+}
+
+#about__button button .left:hover ~ .right::after {
+  transform: translate(0, -50%) rotate(7deg)
+}
+
+/* bubbles */
+button.about__button::before {
+  content: '';
+  pointer-events: none;
+  opacity: .9;
+  background:
+    radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color-button) 3px, var(--text-color-button) 4px, transparent 4px),
+    radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color-button) 3px, var(--text-color-button) 4px, transparent 4px),
+    radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color-button) 3px, var(--text-color-button) 4px, transparent 4px),
+    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color-button) 5px, var(--text-color-button) 6px, transparent 6px),
+    radial-gradient(circle at 48% 55%, transparent 0, transparent 4px, var(--text-color-button) 5px, var(--text-color-button) 6px, transparent 6px),
+    radial-gradient(circle at 52% 58%, transparent 0, transparent 4px, var(--text-color-button) 6px, var(--text-color-button) 8px, transparent 8px),
+    radial-gradient(circle at 55% 62%, transparent 0, transparent 8px, var(--text-color-button) 8px, var(--text-color-button) 6px, transparent 6px),
+    radial-gradient(circle at 58% 65%, transparent 0, transparent 8px, var(--text-color-button) 8px, var(--text-color-button) 7px, transparent 7px),
+    radial-gradient(circle at 61% 68%, transparent 0, transparent 8px, var(--text-color-button) 9px, var(--text-color-button) 9px, transparent 9px),
+    radial-gradient(circle at 64% 71%, transparent 0, transparent 10px, var(--text-color-button) 10px, var(--text-color-button) 11px, transparent 11px);
+
+  width: 50%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 5s linear infinite both;
 }
 
 @keyframes bubbles {
