@@ -1907,15 +1907,11 @@ button#button-for-the-section-our-films {
 }
 
 .contact__body hr {display: none;}
-.contact__body {opacity: 0; transform: translateX(100%); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
-.contact__body.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-.contact__wrapper h1 {
+.contact__wrapper h2 {
     text-align: center;
-    font-size: 96px;
+    font-size: clamp(30px, 3vw, 96px);
     padding: 20px;
+    font-weight: 700;
 }
     .contact__left {float: left;max-width: 40%;width: 100%;}
     .feedback-form {
@@ -2062,6 +2058,7 @@ gmp-map {
   opacity: 0;
   box-shadow: 0 0 0 1px #fff;
   transition: all .2s ease-in-out;
+  pointer-events: none;
 }
 .social-media-list li:hover {
   background-color: #fff; 
@@ -2124,7 +2121,7 @@ textarea::placeholder {
 .contact__left {
     padding: 0 10%;
 }
-.contact__wrapper h1 {font-size: 64px;}
+/*.contact__wrapper h1 {font-size: 64px;}*/
 .contact__left {
     padding: 0 0;
     margin: 0;
@@ -2136,8 +2133,13 @@ textarea::placeholder {
   font-size: 20px;
 }
 }
+@media (max-width: 560px) {
+.contact__wrapper h2 {
+    border-bottom: 3px #fff solid;border-width: 15%;
+}
+}
 @media (max-width: 449px) {
-.contact__wrapper h1 {font-size: 44px;} 
+/*.contact__wrapper h2 {font-size: 44px;} */
 .place {
   margin-left: 0;
 }
