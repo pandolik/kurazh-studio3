@@ -1,6 +1,7 @@
 @import url("reset.css");
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
 :root {
     --color-text-header: #00FFFF;
 }
@@ -44,9 +45,10 @@
     text-align: center;
     padding: 16px 30px;
     margin-right: 4px;
-    background-color: #3d96f4; 
+    background-color: #686965; 
     border-radius: 50px;
-    color: #000;
+    color: lightgoldenrodyellow;
+    box-shadow: var(--color-text-header) 12px 12px 32px;
     letter-spacing: 2px;
     font-size: 14px;
     font-weight: 500;
@@ -487,16 +489,11 @@
             opacity: 1;
         }
     }
-.main__btns {
-/*    margin: 40px 0;*/
-}
 .main__btn {
-/*    padding: 20px;*/
     border: 3px solid #fff;
     border-radius: 4px;
     font-weight: 800;
     letter-spacing: 1px;
-
 }
 .main__btns {
     display: flex;
@@ -561,7 +558,10 @@
 }
 @media (max-width: 1100px) {
     .main__wrapper {
-        margin-left: 0;
+        margin: 115px 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 @media (max-width: 991.98px) {
@@ -578,6 +578,9 @@
         flex: 1;}
 }
 @media (max-width: 449.98px) {
+    .main__body {
+        padding: 20px;
+    }
     .main__btn {
         display: -ms-flexbox;
         display: flex;
@@ -627,10 +630,12 @@
 /*-----------------CLASSES------------------------*/
 .section__classes {box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); background-color: #121212}
 .classes {
-    font-size: clamp(28px, 8vw, 72px);
+    font-size: clamp(28px, 5vw, 72px);
     padding: 20px 0 0 40px;
     opacity: 0;
     font-weight: 700;
+    text-align: center;
+    font-family: "Caprasimo", serif;
 }
 .player__wrapp {
     display: flex;
@@ -654,7 +659,6 @@
 }
 @media (max-width: 991.98px) {
     .classes {
-        font-size: 40px;
         margin: auto 0;
 }
 .player {
@@ -667,23 +671,12 @@
     height: 90vh !important;
 }
 }
-@media (max-width: 634px) {
-    .classes {
-        font-size: 30px;
-}
-}
-@media (max-width: 560px) {
-    .classes {
-        font-size: 30px;
-}
 .player__video {
     height: 90vh !important;
 }
-
 }
 @media (max-width: 449px) {
     .classes {
-        font-size: 20px;
         margin: 0 0 12px 0;
 }
 .player__video {
@@ -704,6 +697,7 @@
     margin-bottom: 20px;
     font-size: clamp(22px, 5vw, 56px);
     padding: 20px;
+    font-family: "Caprasimo", serif;
 }
 
 .about-us__body {
@@ -715,7 +709,7 @@
 .about-us__body .about-us__text {
     flex: 1;
     padding: 20px;
-    letter-spacing: 1.33px;
+    letter-spacing: .9px;
     opacity: 0;
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     transform: translateX(300px);
@@ -847,6 +841,7 @@
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
+    font-family: "Caprasimo", serif;
 }
 .curators__main {
     background-color: rgba(0, 0, 0, .5);
@@ -1004,7 +999,7 @@
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
    padding: 30px 15px;
    border-radius: 20px;
-   background-color: #252323;
+   background-color: #1B1818;
 }
 .default-container>p {
    display: none;
@@ -1015,6 +1010,7 @@
     margin: 0 0 15px 0;
     font-weight: bold;
     letter-spacing: 2px;
+    font-family: "Caprasimo", serif;
 }
 #default-container__p {
     font-size: 28px;
@@ -1086,6 +1082,15 @@
     transition: 0.4s;
     color: #fff;
     box-shadow: 3px 3px 3px rgba(255, 235, 150, 0.9);
+}
+.def-info__line {
+    position: relative;
+    top: 50px;
+    display: block;
+    width: 100%;
+    height: 5px;
+    border-radius: 30%;
+    background-color: rgba(255,0,0, .6);
 }
 @media(min-width: 1716px) {
 .poster {
@@ -1370,7 +1375,6 @@
     }
 
     #slider__wrapp p {
-      font-family: Serif;
       position: absolute;
       top: 100%;
       left: 50%;
@@ -1551,6 +1555,7 @@
     font-size: 60px;
     margin: 0 0 20px 0;
     font-weight: 600;
+    font-family: "Caprasimo", serif;
 }
 .team__text {
     font-size: 35px;
@@ -1905,7 +1910,7 @@ button#button-for-the-section-our-films {
 }*/
 /*---------------------CONTACT SECTION------------------------*/
 .contact__wrapper {
-  font-family: "Gerhaus", sans-serif; /* Если шрифт не загрузится, будет использоваться альтернативный шрифт */
+  font-family: "Gerhaus", sans-serif; 
   width: 100%;
   height: 670px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -1917,6 +1922,7 @@ button#button-for-the-section-our-films {
     font-size: clamp(30px, 3vw, 96px);
     padding: 20px;
     font-weight: 700;
+    font-family: "Caprasimo", serif;
 }
     .contact__left {float: left;max-width: 40%;width: 100%;}
     .feedback-form {
