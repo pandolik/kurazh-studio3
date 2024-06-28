@@ -449,6 +449,8 @@
     opacity: 0;
     transform: translateX(100%);
     animation: slideFromRight 1.5s ease forwards, dissolveIn 2s ease forwards;
+
+    font-style: italic;
 }
 
 @keyframes slideFromRight {
@@ -640,6 +642,8 @@
     font-weight: 700;
     text-align: center;
     font-family: "Caprasimo", serif;
+    font-weight: 600;
+    font-style: italic;
 }
 .player__wrapp {
     display: flex;
@@ -701,6 +705,7 @@
     font-size: clamp(22px, 5vw, 56px);
     padding: 20px;
     font-family: "Caprasimo", serif;
+    font-style: italic;
 }
 
 .about-us__body {
@@ -743,6 +748,7 @@
     margin-bottom: 20px;
     font-size: 36px;
     font-family: "Caprasimo", serif;
+    font-style: italic;
 }
 
 .about-us__text p {
@@ -1560,6 +1566,7 @@
     margin: 0 0 20px 0;
     font-weight: 600;
     font-family: "Caprasimo", serif;
+    font-style: italic;
 }
 .team__text {
     font-size: 35px;
@@ -1929,6 +1936,7 @@ button#button-for-the-section-our-films {
     padding: 20px;
     font-weight: 700;
     font-family: "Caprasimo", serif;
+    font-style: italic;
 }
     .contact__left {float: left;max-width: 40%;width: 100%;}
     .feedback-form {
