@@ -1,6 +1,7 @@
 @import url("reset.css");
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
 @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
 
 :root {
     --color-text-header: #00FFFF;
@@ -846,12 +847,14 @@
     position: relative;
     top: 40px;
 }
+
 .curators__wrapper h2 {
     font-size: clamp(16px, 5vw, 72px);
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
     font-family: "Caprasimo", serif;
+    font-style: italic;
 }
 .curators__main {
     background-color: rgba(0, 0, 0, .5);
