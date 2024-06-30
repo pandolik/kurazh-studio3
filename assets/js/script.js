@@ -25,19 +25,19 @@ arrowTop.addEventListener('click', () => {
         }
     }
 
-// Click on the button, opening a hidden block.
-    const button = document.getElementById("button-our-projects-more");
-    const blocks = document.querySelectorAll(".block-container");
-    button.addEventListener("click", function () {
-        blocks.forEach((block) => {
-            // Проверяем текущее состояние блока
-            if (block.style.display === "none" || block.style.display === "") {
-                block.style.display = "flex"; // Если скрыт или не определен, показываем блок
-            } else {
-                block.style.display = "none"; // Если отображается, скрываем блок
-            }
-        });
-    });
+// Click on the button, opening a hidden block. Section Projects
+    // const button = document.getElementById("button-our-projects-more");
+    // const blocks = document.querySelectorAll(".block-container");
+    // button.addEventListener("click", function () {
+    //     blocks.forEach((block) => {
+    //         // Проверяем текущее состояние блока
+    //         if (block.style.display === "none" || block.style.display === "") {
+    //             block.style.display = "flex"; // Если скрыт или не определен, показываем блок
+    //         } else {
+    //             block.style.display = "none"; // Если отображается, скрываем блок
+    //         }
+    //     });
+    // });
 
 // HEADER, FOOTER LINKS
     document.querySelectorAll('.link__menu').forEach(function (link) {
@@ -84,9 +84,9 @@ arrowTop.addEventListener('click', () => {
 
 // Animation in Main section
     function fadeInOnScroll(elementId, duration) {
-        var distance = window.innerWidth; // Начальное расстояние для анимации справа налево
-        var op = 0; // Счетчик для каждой анимации
-        var interval = 1; // Интервал в миллисекундах
+        var distance = window.innerWidth; 
+        var op = 0; 
+        var interval = 1;
         var increment = interval / duration;
         var element = document.getElementById(elementId);
         var isVisible = false;
@@ -101,7 +101,7 @@ arrowTop.addEventListener('click', () => {
                     }
                     element.style.opacity = op;
                     distance -= increment * window.innerWidth; // Уменьшаем расстояние на ширину окна, чтобы анимация была справа налево
-                    element.style.transform = `translateX(-${distance}px)`; // Применяем трансформацию для движения справа налево
+                    element.style.transform = `translateX(-${distance}px)`; 
                 }, interval);
             }
         }
@@ -119,6 +119,9 @@ arrowTop.addEventListener('click', () => {
         window.addEventListener('scroll', fadeIn);
     }
 
+
+
+
 // Animation in Default-container section
     const fadeInElements = ['default-container__p', 'default-container__text', 'classes', 'curators__title', 'about-us__title', 'contact__title'];
 
@@ -127,32 +130,32 @@ arrowTop.addEventListener('click', () => {
     });
 
 // OPEN ANSVER in QUESTION
-    const buttons = document.querySelectorAll('.question__button');
-    let activeContent = null;
-    let activeButton = null;
+    // const buttons = document.querySelectorAll('.question__button');
+    // let activeContent = null;
+    // let activeButton = null;
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const content = button.nextElementSibling;
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         const content = button.nextElementSibling;
 
-            if (activeContent && activeContent !== content) {
-                activeContent.classList.remove('active');
-                activeButton.querySelector('svg').classList.remove('rotate');
-            }
+    //         if (activeContent && activeContent !== content) {
+    //             activeContent.classList.remove('active');
+    //             activeButton.querySelector('svg').classList.remove('rotate');
+    //         }
 
-            if (content.classList.contains('active')) {
-                content.classList.remove('active');
-                button.querySelector('svg').classList.remove('rotate');
-                activeContent = null;
-                activeButton = null;
-            } else {
-                content.classList.add('active');
-                button.querySelector('svg').classList.add('rotate');
-                activeContent = content;
-                activeButton = button;
-            }
-        });
-    });
+    //         if (content.classList.contains('active')) {
+    //             content.classList.remove('active');
+    //             button.querySelector('svg').classList.remove('rotate');
+    //             activeContent = null;
+    //             activeButton = null;
+    //         } else {
+    //             content.classList.add('active');
+    //             button.querySelector('svg').classList.add('rotate');
+    //             activeContent = content;
+    //             activeButton = button;
+    //         }
+    //     });
+    // });
 
 // PLAYER ANIMATION - BLOCK APPEAREANS
     // const playerWrapper = document.querySelector('.player__wrapp');
@@ -190,7 +193,21 @@ usBodySections.forEach(usBodySection => {
     usBodyObserver.observe(usBodySection);
 });
 
+const aboutUsSectionReverse = document.querySelector('.about-us__body.about-us__body--reverse');
+const aboutUsObserverReverse = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            aboutUsObserverReverse.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1
+});
+aboutUsObserverReverse.observe(aboutUsSectionReverse);
 
+
+// contact__body
 const contactBodySections = document.querySelectorAll('.contact__body');
 
     contactBodySections.forEach(contactBodySection => {
@@ -206,22 +223,6 @@ const contactBodySections = document.querySelectorAll('.contact__body');
         });
         contactBodyObserver.observe(contactBodySection);
     });
-
-
-const aboutUsSectionReverse = document.querySelector('.about-us__body.about-us__body--reverse');
-const aboutUsObserverReverse = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            aboutUsObserverReverse.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.1
-});
-aboutUsObserverReverse.observe(aboutUsSectionReverse);
-
-
 
 
 // CURATORS ANIMATION - BLOCK APPEAREANS
@@ -279,8 +280,31 @@ aboutUsObserverReverse.observe(aboutUsSectionReverse);
             });
 
 
+// INFO WRAPPER
+    const blocks = document.querySelectorAll(".info__block");
+    const observerOptions = {
+        threshold: 0.4,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const blocksArray = Array.from(blocks);
+                blocksArray.forEach((block, index) => {
+                    setTimeout(() => {
+                        block.classList.add("visible");
+                    }, index * 600);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(document.querySelector('.info__wrapper'));
+
+
+
 
 // MESSAGE FOR FEEDBACK FORM
-
 
 });
