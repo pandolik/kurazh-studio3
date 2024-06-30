@@ -26,18 +26,18 @@ arrowTop.addEventListener('click', () => {
     }
 
 // Click on the button, opening a hidden block. Section Projects
-    // const button = document.getElementById("button-our-projects-more");
-    // const blocks = document.querySelectorAll(".block-container");
-    // button.addEventListener("click", function () {
-    //     blocks.forEach((block) => {
-    //         // Проверяем текущее состояние блока
-    //         if (block.style.display === "none" || block.style.display === "") {
-    //             block.style.display = "flex"; // Если скрыт или не определен, показываем блок
-    //         } else {
-    //             block.style.display = "none"; // Если отображается, скрываем блок
-    //         }
-    //     });
-    // });
+    const button = document.getElementById("button-our-projects-more");
+    const blocks = document.querySelectorAll(".block-container");
+    button.addEventListener("click", function () {
+        blocks.forEach((block) => {
+            // Проверяем текущее состояние блока
+            if (block.style.display === "none" || block.style.display === "") {
+                block.style.display = "flex"; // Если скрыт или не определен, показываем блок
+            } else {
+                block.style.display = "none"; // Если отображается, скрываем блок
+            }
+        });
+    });
 
 // HEADER, FOOTER LINKS
     document.querySelectorAll('.link__menu').forEach(function (link) {
@@ -281,19 +281,19 @@ const contactBodySections = document.querySelectorAll('.contact__body');
 
 
 // INFO WRAPPER
-    const blocks = document.querySelectorAll(".info__block");
+    const infoblocks = document.querySelectorAll(".info__block");
     const observerOptions = {
-        threshold: 0.4,
+        threshold: 0.1,
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                const blocksArray = Array.from(blocks);
-                blocksArray.forEach((block, index) => {
+                const infoblocksArray = Array.from(infoblocks);
+                infoblocksArray.forEach((block, index) => {
                     setTimeout(() => {
                         block.classList.add("visible");
-                    }, index * 600);
+                    }, index * 300);
                 });
                 observer.unobserve(entry.target);
             }
