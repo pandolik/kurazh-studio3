@@ -1697,7 +1697,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto ;
+    height: auto;
 }
 .projects-wrap {
     padding-top: 40px;
@@ -1823,7 +1823,6 @@ button#button-for-the-section-our-films {
   height: 670px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
 .contact__body hr {display: none;}
 .contact__wrapper h2 {
     text-align: center;
@@ -1852,6 +1851,7 @@ button#button-for-the-section-our-films {
       box-sizing: border-box;
       font-size: clamp(30px, 5vw, 20px);
       color: #333;
+      letter-spacing: 1px
     }
     input[type="text"]::placeholder,
     input[type="email"]::placeholder,
@@ -1863,7 +1863,6 @@ button#button-for-the-section-our-films {
       resize: vertical;
       height: 198px;
       border-radius: 20px;
-      letter-spacing: 1px
     }
     .feedback-form input[type="submit"] {
       background-color: #686965;

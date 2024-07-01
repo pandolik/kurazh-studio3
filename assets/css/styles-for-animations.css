@@ -15,7 +15,7 @@
 /*BUTTON PROJECTS*/
 button#button-for-the-section-our-films {
   position:relative;
-  padding: 10px 20px;  
+  padding: 20px 35px;  
   border: none;
   background: none;
   cursor: pointer;
@@ -23,7 +23,7 @@ button#button-for-the-section-our-films {
   font-family: "Source Code Pro";
   font-weight: 900;
   text-transform: uppercase;
-  font-size: 36px;  
+  font-size: clamp(20px, 5vw, 35px);  
   color: lightgoldenrodyellow;
   
   background-color: #686965;
@@ -33,7 +33,7 @@ button#button-for-the-section-our-films {
   overflow: hidden;   
   width: 500px;
   height: auto;
-  min-height: 100px;
+  min-height: 60px;
 }
 
 button:focus {
